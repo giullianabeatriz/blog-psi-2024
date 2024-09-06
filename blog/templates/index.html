@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br"></html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!--box icons-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Métodos Contraceptivos</title>
+{% extends "base.html" %}
+{% load static %}
 
-</head>
-<body>
-    <!--Cabeçalho-->
-    <header>
-        <!--Navegação-->
-        <div class="nav container">
-        <!--Logo-->
-        <a href="#" class="logo">Loucos por <span>pontos</span></a>
-        <!--Botão de Login-->
-        <a href="referencias.html" class="login">Referências</a>
-        </div>
-    </header>
-
+{% block content %}
     <!--Home-->
     <section class="home" id="home">
         <div class="home-texto container">
@@ -30,151 +10,16 @@
         </div>
     </section>
 
-    <!--Filtro de Posts-->
-    <div class="filtro-post container">
-        <span class="filtro-item filtro-ativo" data-filter="todos">Todos</span>
-        <a href="hormonais.html"><span class="filtro-item" data-filter="hormonal">Hormonal</a></span>
-        <a href="barreira.html"><span class="filtro-item" data-filter="barreira">Barreira</span></a>
-        <a href="cirurgico.html"><span class="filtro-item" data-filter="cirurgico">Cirúrgico</span></a>
-        <a href="comportamental.html"><span class="filtro-item" data-filter="comportamental">Comportamental</a></span>
-    </div>
-
     <!--Posts-->
     <section class="post container">
-        <!--Caixa Post 1-->
+      {% for post in posts %}
         <div class="post-caixa hormonal">
-            <img src="assets/hormonal.png" alt="" class="post-img"> 
-            <h2 class="categoria">Hormonal</h2>
-            <a href="hormonais.html" class="post-titulo">Métodos hormonais</a>
-            <p class="post-descricao">
-                São métodos à base de formas sintéticas dos hormônios femininos estrogênio e progesterona. Alguns desses métodos combinam os dois hormônios, enquanto outros têm apenas progesterona. 
-            </p>
-        </div>
-
-        <!--Caixa Post 2-->
-        <div class="post-caixa barreira">
-            <img src="assets/barreira_img.webp" alt="" class="post-img">
-            <h2 class="categoria">Barreira</h2>
-            <a href="barreira.html" class="post-titulo">Métodos de barreira</a>
-            <p class="post-descricao">
-                Os contraceptivos de barreira impedem a entrada do esperma no útero. Eles incluem preservativo, diafragma, capuz cervical e esponja contraceptiva. Alguns preservativos contêm espermicidas.
-            </p>
-        </div>
-
-        <!--Caixa Post 3-->
-        <div class="post-caixa comportamental">
-            <img src="assets/comportamental.jpg" alt="" class="post-img">
-            <h2 class="categoria">Comportamental</h2> 
-            <a href="comportamental.html" class="post-titulo">Métodos comportamentais</a>
-            <p class="post-descricao">Métodos naturais ou comportamentais são métodos que necessitam de muita disciplina e muito conhecimento do próprio corpo. São alguns deles: abstinência, tabelinha e coito interrompido.</p>
-        </div>
-
-        <!--Caixa Post 4-->
-        <div class="post-caixa comportamental">
-            <img src="assets/abstinencia.avif" alt="" class="post-img">
-            <h2 class="categoria">Comportamental</h2>
-            <a href="post 4 abstinencia.html" class="post-titulo">Abstinência sexual</a>
-            <p class="post-descricao">Abstinência Sexual é a ausência do ato sexual, podendo ser periódica ou não. A ausência de relação sexual engloba o não contato entre a região genital e íntima de duas pessoas.</p>
-        </div>
-
-        <!--Caixa Post 5-->
-        <div class="post-caixa barreira">
-            <img src="assets/preservativo.webp" alt="" class="post-img">
-            <h2 class="categoria">Barreira</h2>
-            <a href="post 5 preservativos.html" class="post-titulo">Preservativos</a>
-            <p class="post-descricao">Existem dois tipos de camisinha(preservativo): a masculina, que é feita de látex e deve ser colocada no pênis ereto antes da penetração; e a feminina, que é feita de latex ou borracha nitrílica e é usada internamente na vagina.</p>
-        </div>
-
-        <!--Caixa Post 6-->
-        <div class="post-caixa comportamental">
-            <img src="assets/coito interrompido.avif" alt="" class="post-img">
-            <h2 class="categoria">Comportamental</h2>
-            <a href="post 6 coito interrompido.html" class="post-titulo">Coito interrompido</a>
-            <p class="post-descricao">Coito interrompido é quando, numa relação sexual, o homem pressente a ejaculação, retira o pênis e ejacula fora da vagina. É um dos métodos contraceptivos mais antigos que existe.</p>
-        </div>
-
-        <!--Caixa Post 7-->
-        <div class="post-caixa cirurgico">
-            <img src="assets/metodo cirurgico.png" alt="" class="post-img">
-            <h2 class="categoria">Cirúrgico</h2>
-            <a href="cirurgico.html" class="post-titulo">Métodos cirúrgicos</a>
-            <p class="post-descricao">São métodos contraceptivos definitivos que promovem a esterilização. Podem ser realizados tanto na mulher, por meio da ligadura das trompas, como no homem, através da vasectomia.</p>
-        </div>
-
-        <!--Caixa Post 8-->
-        <div class="post-caixa barreira">
-            <img src="assets/diafragma.webp" alt="" class="post-img">
-            <h2 class="categoria">Barreira</h2>
-            <a href="post 8 diafragma.html" class="post-titulo">Diafragma</a>
-            <p class="post-descricao">O diafragma é uma capinha de borracha bem fina, que a mulher coloca, ela mesma, no fundo da vagina, antes da relação sexual, tapando, assim, o colo do útero.</p>
-        </div>
-
-        <!--Caixa Post 9-->
-        <div class="post-caixa hormonal" class="post-img">
-            <img src="assets/pilula anticoncepcional.avif" alt="" class="post-img">
-            <h2 class="categoria">Hormonal</h2>
-            <a href="post 9 pilula anticoncepcional.html" class="post-titulo">Pílulas anticoncepcionais</a>
-            <p class="post-descricao">São componentes que contêm dois/um hormônio(s) sintético(s), o estrogênio e o progestogênio, semelhantes aos produzidos pelo ovário da mulher. As pílulas combinadas atuam basicamente por meio da inibição da ovulação.</p>
-        </div>
-
-        <!--Caixa Post 10-->
-        <div class="post-caixa barreira">
-            <img src="assets/Espermicida.avif" alt="" class="post-img">
-            <h2 class="categoria">Barreira</h2>
-            <a href="post 10 espermicida.html" class="post-titulo">Espermicida</a>
-            <p class="post-descricao">Os espermicidas são preparações que matam o espermatozoide ao contato. Estão disponíveis sob a forma de espumas, cremes, géis e supositórios e são colocados na vagina antes da relação sexual.</p>
-        </div>        
-
-        <!--Caixa Post 11-->
-        <div class="post-caixa comportamental">
-            <img src="assets/Tabelinha.png" alt="" class="post-img">
-            <h2 class="categoria">Comportamental</h2>
-            <a href="post 11 calendario tabelinha.html" class="post-titulo">Calendário (tabelinha)</a>
-            <p class="post-descricao">A tabelinha é um método que se baseia no cálculo dos dias em que provavelmente estará mais apta a engravidar, caso tenha relações sexuais desprotegidas.</p>
-        </div>       
-
-        <!--Caixa Post 12-->
-        <div class="post-caixa hormonal">
-            <img src="assets/injetáveis.jpg" alt="" class="post-img">
-            <h2 class="categoria">Hormonal</h2>
-            <a href="post 12 injeção anticoncepcional.html" class="post-titulo">Injeção anticoncepcional</a>
-            <p class="post-descricao">Existem dois tipos de anticoncepcionais injetáveis, o trimestral que contém apenas progesterona e que deve ser aplicado a cada 3 meses e outro mensal que contém estrogênio e progesterona.</p>
-        </div>      
-        
-        <!--Caixa Post 13-->
-        <div class="post-caixa barreira">
-            <img src="assets/DIU.jpg" alt="" class="post-img">
-            <h2 class="categoria">Barreira/Intrauterino</h2>
-            <a href="post 13 diu.html" class="post-titulo">DIU</a>
-            <p class="post-descricao">O DIU é um pequeno dispositivo, geralmente em forma de T, que é inserido no útero para prevenir a gravidez.</p>
-        </div>      
-
-        <!--Caixa Post 14-->
-        <div class="post-caixa hormonal">
-            <img src="assets/adesivo.avif" alt="" class="post-img">
-            <h2 class="categoria">Hormonal</h2>
-            <a href="post 14 adesivo hormonal.html" class="post-titulo">Adesivo hormonal</a>
-            <p class="post-descricao">O adesivo anticoncepcional é um método contraceptivo baseado na administração dos hormônios estrogênio e progesterona através de um adesivo que precisa ser aplicado à pele.</p>
-        </div>    
-        
+            <img src={{ post.imagem }} alt="" class="post-img"> 
+            <h2 class="categoria">{{ post.categoria }}</h2>
+            <a href="hormonais.html" class="post-titulo">{{ post.titulo }}</a>
+            <p class="post-descricao">{{ post.descricao }}</p>
+        </div> 
+      {% endfor %}
     </section>
 
-    <!--Rodapé-->
-    <div class="rodape container">
-        <p>Copyright &#169 2024.</p>
-        <div class="social">
-            <a href="https://www.instagram.com/infoweb_2022/" target=”_blank”><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.facebook.com/?locale=pt_BR" target=”_blank”><i class='bx bxl-facebook'></i></a>
-        </div>
-    </div>
-
-    <!--JQuary Link-->
-    <script
-  src="https://code.jquery.com/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
-    <!--Link do JavaScript-->
-    <script src="main.js">
-    </script>
-</body>
-</html>
+{% endblock content %}
