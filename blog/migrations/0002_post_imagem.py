@@ -12,7 +12,30 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='post',
-            name='imagem',
+            name='conteudo',
+            field=models.TextField(default='a', max_length=1200),
+        ),  preserve_default=False,
+    
+    migrations.AddField(
+            model_name='post',
+            name='foto',
             field=models.ImageField(blank=True, upload_to=''),
         ),
+    migrations.AddField(
+            model_name='post',
+            name='subtitulo',
+            field=models.CharField(default='a', max_length=100),
+            preserve_default=False,
+        ),
+    migrations.AlterField(
+            model_name='post',
+            name='categoria',
+            field=models.CharField(max_length=100),
+        ),
+    migrations.AlterField(
+            model_name='post',
+            name='descricao',
+            field=models.TextField(max_length=600),
+        ),
     ]
+    

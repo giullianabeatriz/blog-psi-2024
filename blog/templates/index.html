@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends 'base.html' %}
+{% load static %} 
 
 {% block content %}
     <!--Home-->
@@ -12,14 +12,18 @@
 
     <!--Posts-->
     <section class="post container">
-      {% for post in posts %}
-        <div class="post-caixa hormonal">
-            <img src={{ post.imagem }} alt="" class="post-img"> 
+        {% for post in posts%}
+        <div class="post-caixa">
+            {% if post.imagem %}
+                <img src="{{ post.imagem.url }}" alt="" class="post-img"> 
+            {% else %}
+                <img src="{% static 'assets/istockphoto.jpg' %}" alt="" class="post-img"> 
+            {% endif%}
             <h2 class="categoria">{{ post.categoria }}</h2>
-            <a href="hormonais.html" class="post-titulo">{{ post.titulo }}</a>
+            <a href="{% url 'postagem' id=post.id%}" class="post-titulo">{{ post.titulo }}</a>
             <p class="post-descricao">{{ post.descricao }}</p>
-        </div> 
-      {% endfor %}
+        </div>
+        {% endfor %}
     </section>
 
-{% endblock content %}
+{% endblock content%}
