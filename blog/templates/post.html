@@ -1,16 +1,21 @@
 {% extends "base.html" %}
-{% block title %}Postagem{% endblock title %}
+{% load static %}
+{% block title %}{{ post.titulo }}{% endblock title %}
 
 {% block content %}
     <!--Conteúdo do Post-->
     <section class="post-cabecalho">
         <div class="conteudo-cabecalho post-container">
             <!--Voltar Para a Home-->
-            <a href="index.html" class="voltar-home">Voltar para a Home</a>
+            <a href="{% url 'index' %}" class="voltar-home">Voltar para a Home</a>
             <!--Título-->
             <h1 class="cabecalho-titulo">{{ post.titulo }}</h1>
             <!--Imagem do Post-->
+            {% if post.imagem %}
             <img src="{{ post.imagem.url }}" alt="" class="cabecalho-img">
+            {% else %}
+            <img src="{% static 'assets/istockphoto.jpg' %}" alt="">
+            {% endif %}
         </div>
     </section>
 

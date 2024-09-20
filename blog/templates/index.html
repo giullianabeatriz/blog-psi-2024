@@ -12,7 +12,7 @@
 
     <!--Posts-->
     <section class="post container">
-        {% for post in posts%}
+        {% for post in posts %}
         <div class="post-caixa">
             {% if post.imagem %}
                 <img src="{{ post.imagem.url }}" alt="" class="post-img"> 
@@ -22,6 +22,7 @@
             <h2 class="categoria">{{ post.categoria }}</h2>
             <a href="{% url 'postagem' id=post.id%}" class="post-titulo">{{ post.titulo }}</a>
             <p class="post-descricao">{{ post.descricao }}</p>
+            <p>{{post.data_criacao}}</p>
         </div>
         {% endfor %}
     </section>

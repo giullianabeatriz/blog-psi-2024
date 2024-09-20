@@ -9,8 +9,8 @@ def index(request):
     return render(request, 'index.html', context)
 
 def postagem(request, id):
-    posts = Post.objects.get(pk=id)
+    post = Post.objects.get(pk=id)
     context = {
-        "post": posts,
+        "post": post,
     }
     return render(request, 'post.html', context)
